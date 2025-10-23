@@ -9,7 +9,5 @@ public class MainPanel extends JPanel {
 
     public MainPanel() {
         super.setLayout(new BorderLayout());
-
-        super.add(new Sidebar(), BorderLayout.LINE_END);
     }
 }

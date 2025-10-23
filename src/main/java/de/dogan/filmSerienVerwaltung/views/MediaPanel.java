@@ -4,6 +4,8 @@ import de.dogan.filmSerienVerwaltung.media.AMedia;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MediaPanel extends JPanel {
 
@@ -33,5 +35,31 @@ public class MediaPanel extends JPanel {
 
         super.add(this.getMediaLablel(), BorderLayout.LINE_START);
         super.add(this.getMediaRemoveButton(), BorderLayout.LINE_END);
+        super.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+
+            }
+        });
     }
 }
