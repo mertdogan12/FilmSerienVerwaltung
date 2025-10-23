@@ -12,12 +12,16 @@ public class MainFrame extends JFrame {
 
     private final MainPanel mainPanel;
 
-    public MainFrame(MedienSammlung sammlung) {
+    public MainPanel getMainPanel() {
+        return mainPanel;
+    }
+
+    public MainFrame() {
         super.setSize(WIDTH, HEIGHT);
         super.setTitle(TITLE);
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        this.mainPanel = new MainPanel(sammlung);
+        this.mainPanel = new MainPanel();
         super.add(mainPanel);
 
         super.setVisible(true);

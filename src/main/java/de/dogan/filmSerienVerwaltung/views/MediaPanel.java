@@ -22,6 +22,6 @@ public class MediaPanel extends JPanel {
         super.setMaximumSize(new Dimension(Integer.MAX_VALUE, MainFrame.HEIGHT / 20));
 
         super.add(mediaLable, BorderLayout.LINE_START);
-        super.add(new RemoveButton(), BorderLayout.LINE_END);
+        super.add(new RemoveButton(media), BorderLayout.LINE_END);
     }
 }
