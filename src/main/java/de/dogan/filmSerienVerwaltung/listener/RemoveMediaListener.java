@@ -1,6 +1,7 @@
 package de.dogan.filmSerienVerwaltung.listener;
 
 import de.dogan.filmSerienVerwaltung.media.AMedia;
+import de.dogan.filmSerienVerwaltung.media.MedienSammlung;
 import de.dogan.filmSerienVerwaltung.util.SammlungUtil;
 import de.dogan.filmSerienVerwaltung.views.RemoveButton;
 import de.dogan.filmSerienVerwaltung.views.SammlungPanel;
@@ -35,7 +36,7 @@ public class RemoveMediaListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.getSammlungPanel().getSammlung().removeMedia(this.getMedia());
-        SammlungUtil.addButtons(this.getSammlungPanel().getSammlung(), this.getSammlungPanel(), this.getSidebar());
+        MedienSammlung.getMedienSammlung().removeMedia(this.getMedia());
+        SammlungUtil.addButtons(this.getSammlungPanel(), this.getSidebar());
     }
 }

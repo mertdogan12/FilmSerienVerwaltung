@@ -1,8 +1,10 @@
 package de.dogan.filmSerienVerwaltung.controller;
 
+import de.dogan.filmSerienVerwaltung.listener.AddMediaListener;
 import de.dogan.filmSerienVerwaltung.media.MedienSammlung;
 import de.dogan.filmSerienVerwaltung.media.Movie;
 import de.dogan.filmSerienVerwaltung.util.SammlungUtil;
+import de.dogan.filmSerienVerwaltung.views.AddFrame;
 import de.dogan.filmSerienVerwaltung.views.MainFrame;
 import de.dogan.filmSerienVerwaltung.views.SammlungPanel;
 import de.dogan.filmSerienVerwaltung.views.Sidebar;
@@ -14,37 +16,34 @@ import java.util.List;
 
 public class MainController {
 
-    private final MedienSammlung medienSammlung;
-
     private final MainFrame mainFrame;
-
-    private MedienSammlung getMedienSammlung() {
-        return medienSammlung;
-    }
 
     private MainFrame getMainFrame() {
         return mainFrame;
     }
 
     public MainController() {
-        this.medienSammlung = new MedienSammlung(new ArrayList<>(List.of(
-                new Movie("Batman"),
-                new Movie("Batman"),
-                new Movie("Pluribus - Glück ist ansteckend")
-        )));
         this.mainFrame = new MainFrame();
 
         Sidebar sidebar = new Sidebar();
 
-        SammlungPanel sammlungPanel = new SammlungPanel(this.getMedienSammlung());
-        SammlungUtil.addButtons(this.getMedienSammlung(), sammlungPanel, sidebar);
+        SammlungPanel sammlungPanel = new SammlungPanel();
+        SammlungUtil.addButtons(sammlungPanel, sidebar);
 
         JScrollPane scrollPane = new JScrollPane(sammlungPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
+        sidebar.getAddButton().addActionListener(e -> {
+            AddFrame addFrame = new AddFrame();
+            addFrame.getAddPanel().getSubmitFilm().addActionListener(new AddMediaListener(
+                addFrame, addFrame.getAddPanel(), sammlungPanel, sidebar
+            ));
+        });
+
         this.getMainFrame().getMainPanel().add(scrollPane, BorderLayout.CENTER);
         this.getMainFrame().getMainPanel().add(sidebar, BorderLayout.LINE_END);
+
         this.getMainFrame().setVisible(true);
     }
 }

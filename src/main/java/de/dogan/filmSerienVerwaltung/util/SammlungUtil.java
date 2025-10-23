@@ -11,9 +11,9 @@ public final class SammlungUtil {
 
     private SammlungUtil() {}
 
-    public static void addButtons(MedienSammlung sammlung, SammlungPanel sammlungPanel, Sidebar sidebar) {
+    public static void addButtons(SammlungPanel sammlungPanel, Sidebar sidebar) {
         sammlungPanel.removeAll();
-        sammlung.toList().forEach(media -> {
+        MedienSammlung.getMedienSammlung().toList().forEach(media -> {
             MediaPanel mediaPanel = new MediaPanel(media);
             mediaPanel.getMediaRemoveButton()
                     .addActionListener(new RemoveMediaListener(sammlungPanel, sidebar, media));
