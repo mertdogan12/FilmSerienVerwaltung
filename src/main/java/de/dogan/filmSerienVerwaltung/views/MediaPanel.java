@@ -8,7 +8,16 @@ import java.awt.*;
 public class MediaPanel extends JPanel {
 
     private final AMedia media;
-    private final MediaLabel mediaLable;
+    private final MediaLabel mediaLablel;
+    private final RemoveButton mediaRemoveButton;
+
+    public MediaLabel getMediaLablel() {
+        return mediaLablel;
+    }
+
+    public RemoveButton getMediaRemoveButton() {
+        return mediaRemoveButton;
+    }
 
     public AMedia getMedia() {
         return media;
@@ -16,12 +25,13 @@ public class MediaPanel extends JPanel {
 
     public MediaPanel(AMedia media) {
         this.media = media;
-        this.mediaLable = new MediaLabel(media);
+        this.mediaLablel = new MediaLabel(this.getMedia());
+        this.mediaRemoveButton = new RemoveButton();
 
         super.setLayout(new BorderLayout());
         super.setMaximumSize(new Dimension(Integer.MAX_VALUE, MainFrame.HEIGHT / 20));
 
-        super.add(mediaLable, BorderLayout.LINE_START);
-        super.add(new RemoveButton(media), BorderLayout.LINE_END);
+        super.add(this.getMediaLablel(), BorderLayout.LINE_START);
+        super.add(this.getMediaRemoveButton(), BorderLayout.LINE_END);
     }
 }

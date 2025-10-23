@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class RemoveButton extends JButton {
 
-    public RemoveButton(AMedia media) {
+    public RemoveButton() {
         super.setText("Remove");
     }
 }

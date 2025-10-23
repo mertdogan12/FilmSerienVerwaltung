@@ -7,12 +7,6 @@ import java.awt.*;
 
 public class MainPanel extends JPanel {
 
-    private final SammlungPanel sammlungPanel;
-
-    public SammlungPanel getSammlungPanel() {
-        return sammlungPanel;
-    }
-
     public MainPanel() {
         super.setLayout(new BorderLayout());
     }
