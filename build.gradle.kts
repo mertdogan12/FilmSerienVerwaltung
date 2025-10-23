@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("application")
 }
 
 group = "de.dogan.filmSerienVerwaltung"
@@ -17,4 +18,20 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "de.dogan.filmSerienVerwaltung.Main"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.named<Jar> ("jar") {
+    manifest {
+        attributes("Main-Class" to "de.dogan.filmSerienVerwaltung.Main")
+    }
 }
