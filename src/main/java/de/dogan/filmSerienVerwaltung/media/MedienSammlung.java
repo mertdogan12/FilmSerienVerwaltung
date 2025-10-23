@@ -7,10 +7,6 @@ public final class MedienSammlung {
 
     private final List<AMedia> sammlung;
 
-    public List<AMedia> getSammlung() {
-        return new ArrayList<>(sammlung);
-    }
-
     public MedienSammlung(List<AMedia> medien) {
         this.sammlung = medien;
     }
@@ -21,5 +17,13 @@ public final class MedienSammlung {
 
     public boolean removeMedia(AMedia media) {
         return sammlung.remove(media);
+    }
+
+    public List<AMedia> toList() {
+        return new ArrayList<>(sammlung);
+    }
+
+    public AMedia[] toArray() {
+        return sammlung.toArray(AMedia[]::new);
     }
 }

@@ -1,25 +1,26 @@
 package de.dogan.filmSerienVerwaltung.views;
 
+import de.dogan.filmSerienVerwaltung.media.MedienSammlung;
+
 import javax.swing.*;
 
-public final class MainFrame {
+public class MainFrame extends JFrame {
 
     public static final int WIDTH = 1920 / 2;
     public static final int HEIGHT = 1080 / 2;
     public static final String TITLE = "Film und Serien Verwaltung";
 
-    private final JFrame mainFrame;
+    private final MainPanel mainPanel;
 
-    public JFrame getMainFrame() {
-        return mainFrame;
-    }
+    public MainFrame(MedienSammlung sammlung) {
+        super.setSize(WIDTH, HEIGHT);
+        super.setTitle(TITLE);
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-    public MainFrame() {
-        this.mainFrame = new JFrame();
+        this.mainPanel = new MainPanel(sammlung);
+        super.add(mainPanel);
 
-        this.getMainFrame().setSize(WIDTH, HEIGHT);
-        this.getMainFrame().setTitle(TITLE);
-        this.getMainFrame().setVisible(true);
+        super.setVisible(true);
     }
 
 }

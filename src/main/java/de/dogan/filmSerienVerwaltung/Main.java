@@ -1,9 +1,9 @@
 package de.dogan.filmSerienVerwaltung;
 
-import de.dogan.filmSerienVerwaltung.views.MainFrame;
+import de.dogan.filmSerienVerwaltung.controller.MainController;
 
 public class Main {
     public static void main(String[] args) {
-        new MainFrame();
+        new MainController();
     }
 }
