@@ -38,7 +38,7 @@ public class MainController {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        this.getMainFrame().getMainPanel().add(scrollPane, BorderLayout.LINE_START);
+        this.getMainFrame().getMainPanel().add(scrollPane, BorderLayout.CENTER);
         this.getMainFrame().setVisible(true);
     }
 }

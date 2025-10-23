@@ -17,7 +17,7 @@ public class SammlungPanel extends JPanel {
         this.sammlung = sammlung;
 
         super.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        super.setPreferredSize(new Dimension((int) (MainFrame.WIDTH * 0.7), 0));
+        // super.setPreferredSize(new Dimension((int) (MainFrame.WIDTH * 0.7), 0));
     }
 
     public void load() {
