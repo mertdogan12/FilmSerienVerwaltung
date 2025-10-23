@@ -18,23 +18,10 @@ public class MediaPanel extends JPanel {
         this.media = media;
         this.mediaLable = new MediaLabel(media);
 
-        super.setLayout(new GridBagLayout());
-        super.setMaximumSize(getDimensions());
+        super.setLayout(new BorderLayout());
+        super.setMaximumSize(new Dimension(Integer.MAX_VALUE, MainFrame.HEIGHT / 20));
 
-        GridBagConstraints gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.gridy = 0;
-
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.weightx = 0.8;
-        super.add(mediaLable, gridBagConstraints);
-
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.weightx = 0.2;
-        super.add(new RemoveButton(), gridBagConstraints);
-    }
-
-    public static Dimension getDimensions() {
-        return new Dimension(MainFrame.WIDTH, MainFrame.HEIGHT / 20);
+        super.add(mediaLable, BorderLayout.LINE_START);
+        super.add(new RemoveButton(), BorderLayout.LINE_END);
     }
 }

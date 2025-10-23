@@ -18,7 +18,6 @@ public class MainPanel extends JPanel {
 
         JScrollPane scrollPane = new JScrollPane(this.getSammlungPanel());
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setPreferredSize(new Dimension(MainFrame.WIDTH, MainFrame.HEIGHT));
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
         super.setLayout(new BorderLayout());

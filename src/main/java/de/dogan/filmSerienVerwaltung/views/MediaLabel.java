@@ -17,8 +17,5 @@ public class MediaLabel extends JLabel {
         this.media = media;
 
         super.setText(media.toString());
-        super.setHorizontalAlignment(LEFT);
-        super.setMinimumSize(new Dimension((int) (MediaPanel.getDimensions().width * 0.5), MediaPanel.getDimensions().height));
-        super.setPreferredSize(MediaPanel.getDimensions());
     }
 }
