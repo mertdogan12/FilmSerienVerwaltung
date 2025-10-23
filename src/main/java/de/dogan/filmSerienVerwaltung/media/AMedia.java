@@ -1,13 +1,18 @@
 package de.dogan.filmSerienVerwaltung.media;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class AMedia {
+public abstract class AMedia implements Serializable {
 
-    private final String name;
+    private String name;
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public abstract MediaType getType();

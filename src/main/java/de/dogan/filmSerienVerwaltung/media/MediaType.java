@@ -1,6 +1,8 @@
 package de.dogan.filmSerienVerwaltung.media;
 
-public enum MediaType {
+import java.io.Serializable;
+
+public enum MediaType implements Serializable {
     FILM("Film"),
     SERIE("Serie")
     ;
