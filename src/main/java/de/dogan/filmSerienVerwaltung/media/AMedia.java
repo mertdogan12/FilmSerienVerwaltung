@@ -6,6 +6,7 @@ import java.util.Objects;
 public abstract class AMedia implements Serializable {
 
     private String name;
+    private double bewertung;
 
     public String getName() {
         return name;
@@ -15,10 +16,19 @@ public abstract class AMedia implements Serializable {
         this.name = name;
     }
 
+    public double getBewertung() {
+        return bewertung;
+    }
+
+    public void setBewertung(double bewertung) {
+        this.bewertung = bewertung;
+    }
+
     public abstract MediaType getType();
 
-    public AMedia(String name) {
-        this.name = name;
+    public AMedia(String name, double bewertung) {
+        this.setName(name);
+        this.setBewertung(bewertung);
     }
 
     @Override

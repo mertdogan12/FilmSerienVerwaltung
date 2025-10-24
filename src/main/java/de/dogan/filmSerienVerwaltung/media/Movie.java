@@ -1,11 +1,9 @@
 package de.dogan.filmSerienVerwaltung.media;
 
-import java.io.Serializable;
-
 public class Movie extends AMedia {
 
-    public Movie(String name) {
-        super(name);
+    public Movie(String name, double bewertung) {
+        super(name, bewertung);
     }
 
     @Override
