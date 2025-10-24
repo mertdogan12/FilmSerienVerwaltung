@@ -14,3 +14,9 @@ GUI zum Speicher von Filmen und Serien ([Github](https://github.com/mertdogan12/
 ./gradlew build
 java -jar ./build/libs/FilmSerienVerwaltung-1.0-SNAPSHOT.jar
 ```
+
+## Input
+- Unterschiedliche Serien/Filme mit
+  - Name
+  - Type (Serie oder FIle)
+  - Bewertung
