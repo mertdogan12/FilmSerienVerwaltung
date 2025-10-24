@@ -1,8 +1,6 @@
 package de.dogan.filmSerienVerwaltung.controller;
 
 import de.dogan.filmSerienVerwaltung.listener.AddMediaListener;
-import de.dogan.filmSerienVerwaltung.media.MedienSammlung;
-import de.dogan.filmSerienVerwaltung.media.Movie;
 import de.dogan.filmSerienVerwaltung.util.SammlungUtil;
 import de.dogan.filmSerienVerwaltung.views.AddFrame;
 import de.dogan.filmSerienVerwaltung.views.MainFrame;
@@ -11,8 +9,6 @@ import de.dogan.filmSerienVerwaltung.views.Sidebar;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainController {
 

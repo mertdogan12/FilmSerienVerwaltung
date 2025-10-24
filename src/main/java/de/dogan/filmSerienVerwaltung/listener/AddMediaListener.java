@@ -23,12 +23,12 @@ public class AddMediaListener implements ActionListener {
         return this.media;
     }
 
-    public Sidebar getSidebar() {
-        return this.sidebar;
-    }
-
     private void setMedia(AMedia media) {
         this.media = media;
+    }
+
+    public Sidebar getSidebar() {
+        return this.sidebar;
     }
 
     public AddPanel getAddPanel() {
